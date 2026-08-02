@@ -1,4 +1,378 @@
-sjudyvsikfs
-df4
-sdf
-sDfs
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alibaba Stil B2B Platforması - index.html</title>
+    <style>
+        :root {
+            --primary-color: #ff6a00;
+            --secondary-color: #222222;
+            --bg-light: #f5f5f5;
+            --text-dark: #333333;
+            --border-color: #e0e0e0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+        }
+
+        /* Top Bar */
+        .top-bar {
+            background-color: #2b2b2b;
+            color: #ccc;
+            font-size: 12px;
+            padding: 8px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .top-bar a {
+            color: #ccc;
+            text-decoration: none;
+            margin-left: 15px;
+        }
+
+        .top-bar a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Main Header */
+        header {
+            background-color: #ffffff;
+            border-bottom: 1px solid var(--border-color);
+            padding: 15px 5%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 26px;
+            font-weight: bold;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .search-box {
+            display: flex;
+            flex: 1;
+            max-width: 600px;
+            margin: 0 30px;
+            border: 2px solid var(--primary-color);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .search-box input {
+            flex: 1;
+            padding: 10px 15px;
+            border: none;
+            outline: none;
+            font-size: 14px;
+        }
+
+        .search-box button {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 0 25px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 20px;
+            font-size: 14px;
+        }
+
+        .header-actions a {
+            text-decoration: none;
+            color: var(--text-dark);
+        }
+
+        /* Navigation Menu */
+        nav {
+            background-color: #ffffff;
+            border-bottom: 1px solid var(--border-color);
+            padding: 0 5%;
+            display: flex;
+            gap: 25px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        nav a {
+            padding: 12px 0;
+            text-decoration: none;
+            color: var(--text-dark);
+            border-bottom: 3px solid transparent;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+            border-bottom-color: var(--primary-color);
+        }
+
+        /* Hero / Categories Section */
+        .hero-container {
+            display: flex;
+            padding: 20px 5%;
+            gap: 20px;
+        }
+
+        .categories-sidebar {
+            width: 250px;
+            background: white;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            padding: 15px;
+        }
+
+        .categories-sidebar h3 {
+            font-size: 15px;
+            margin-bottom: 12px;
+            color: var(--secondary-color);
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 8px;
+        }
+
+        .categories-sidebar ul {
+            list-style: none;
+        }
+
+        .categories-sidebar li a {
+            display: block;
+            padding: 8px 0;
+            text-decoration: none;
+            color: #555;
+            font-size: 13px;
+        }
+
+        .categories-sidebar li a:hover {
+            color: var(--primary-color);
+            padding-left: 5px;
+            transition: 0.2s;
+        }
+
+        .hero-banner {
+            flex: 1;
+            background: linear-gradient(135deg, #ff6a00, #ee0979);
+            border-radius: 4px;
+            color: white;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .hero-banner h1 {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .hero-banner p {
+            font-size: 16px;
+            margin-bottom: 20px;
+            opacity: 0.9;
+        }
+
+        .hero-btn {
+            background: white;
+            color: var(--primary-color);
+            padding: 10px 20px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+            width: fit-content;
+        }
+
+        /* Products Section */
+        .products-section {
+            padding: 20px 5%;
+        }
+
+        .section-title {
+            font-size: 20px;
+            margin-bottom: 15px;
+            color: var(--secondary-color);
+            font-weight: bold;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .product-card {
+            background: white;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            padding: 15px;
+            transition: 0.2s;
+        }
+
+        .product-card:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .product-img {
+            width: 100%;
+            height: 160px;
+            background-color: #eee;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #888;
+            font-size: 13px;
+            margin-bottom: 12px;
+        }
+
+        .product-price {
+            font-size: 18px;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 6px;
+        }
+
+        .product-desc {
+            font-size: 13px;
+            color: #555;
+            margin-bottom: 10px;
+            line-height: 1.4;
+            height: 36px;
+            overflow: hidden;
+        }
+
+        .product-moq {
+            font-size: 11px;
+            color: #888;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #222;
+            color: #aaa;
+            padding: 30px 5%;
+            margin-top: 40px;
+            font-size: 13px;
+            text-align: center;
+        }
+
+        footer p {
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div>Alibaba Stil B2B Platformasına Xoş Gəlmisiniz</div>
+        <div>
+            <a href="#">Təchizatçı Ol</a>
+            <a href="#">Yardım</a>
+            <a href="#">Dil: AZ</a>
+        </div>
+    </div>
+
+    <!-- Main Header -->
+    <header>
+        <a href="#" class="logo">GlobalTrade.az</a>
+        <div class="search-box">
+            <input type="text" placeholder="Məhsul, təchizatçı və ya kateqoriya axtar...">
+            <button>Axtar</button>
+        </div>
+        <div class="header-actions">
+            <a href="#">Hesab</a>
+            <a href="#">Səbət</a>
+        </div>
+    </header>
+
+    <!-- Navigation Menu -->
+    <nav>
+        <a href="#" class="active">Bütün Kateqoriyalar</a>
+        <a href="#">Hazır Məhsullar</a>
+        <a href="#">Təchizatçılar</a>
+        <a href="#">Endirimlər</a>
+    </nav>
+
+    <!-- Hero / Categories Section -->
+    <div class="hero-container">
+        <div class="categories-sidebar">
+            <h3>Əsas Kateqoriyalar</h3>
+            <ul>
+                <li><a href="#">Elektronika & Qadcetlər</a></li>
+                <li><a href="#">Geyim və Tekstil</a></li>
+                <li><a href="#">Ev və Bağçılıq</a></li>
+                <li><a href="#">Sənaye Avadanlıqları</a></li>
+                <li><a href="#">Avtomobil Hissələri</a></li>
+                <li><a href="#">İdman və Əyləncə</a></li>
+            </ul>
+        </div>
+        <div class="hero-banner">
+            <h1>Dünyanın Hər Yerindən Topdansatış</h1>
+            <p>Milyonlarla məhsulu birbaşa istehsalçılardan ən sərfəli qiymətlərlə əldə edin.</p>
+            <a href="#" class="hero-btn">İndi kəşf et</a>
+        </div>
+    </div>
+
+    <!-- Products Section -->
+    <section class="products-section">
+        <div class="section-title">Populyar Topdansatış Məhsulları</div>
+        <div class="product-grid">
+            
+            <div class="product-card">
+                <div class="product-img">Məhsul Şəkli 1</div>
+                <div class="product-price">$12.50 - $15.00</div>
+                <div class="product-desc">Smart Watch Ultra Series 8 Bluetooth Call Fitness Tracker</div>
+                <div class="product-moq">Min. sifariş: 10 ədəd</div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-img">Məhsul Şəkli 2</div>
+                <div class="product-price">$4.20 - $6.80</div>
+                <div class="product-desc">Wireless Bluetooth Earphones TWS True Stereo Headset</div>
+                <div class="product-moq">Min. sifariş: 50 ədəd</div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-img">Məhsul Şəkli 3</div>
+                <div class="product-price">$25.00 - $30.00</div>
+                <div class="product-desc">Professional LED Ring Light with Tripod Stand</div>
+                <div class="product-moq">Min. sifariş: 5 ədəd</div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-img">Məhsul Şəkli 4</div>
+                <div class="product-price">$1.80 - $2.50</div>
+                <div class="product-desc">Fast Charging Type-C USB Cable 3A Braided Wire</div>
+                <div class="product-moq">Min. sifariş: 100 ədəd</div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 GlobalTrade.az (Alibaba Stil B2B Platforması). Bütün hüquqlar qorunur.</p>
+        <p>GitHub Pages vasitəsilə yerləşdirilib.</p>
+    </footer>
+
+</body>
+</html>
